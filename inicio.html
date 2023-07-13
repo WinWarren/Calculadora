@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+    <style>
+        .eliminar {
+            color: red;
+        }
+        .producto {
+            display: inline-block;
+            margin: 10px;
+        }
+        .producto button {
+            display: block;
+            margin-top: 5px;
+        }
+        #reiniciar {
+            margin-top: 20px;
+            color: green;
+        }
+        #ticket {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: blueviolet;
+        }
+        #ticket ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <h1>Casa De Comidas "Don Pedro"</h1>
+    <h2>Productos</h2>
+    <input type="text" id="busqueda" placeholder="Buscar producto...">
+    <div id="lista-productos">
+
+        <h4>PIZZAS</h4>
+
+        <div class="producto" data-precio="1700">
+            <button class="agregar">Muzza Clasica $1700</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1900">
+            <button class="agregar">Muzza Doble $1900</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2030">
+            <button class="agregar">Muzza Jamon $2030</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2200">
+            <button class="agregar">Muzza Jamon Y Morrones $2200</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2000">
+            <button class="agregar">Muzza Napolitana Comun $2000</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2250">
+            <button class="agregar">Muzza Napolitana Especial $2250</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2200">
+            <button class="agregar">Muzza Calabresa $2200</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2300">
+            <button class="agregar">Muzza Roquefort $2300</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2090">
+            <button class="agregar">Muzza Huevo Duro $2090</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2350">
+            <button class="agregar">Muzza con Papas Fritas y Cheddar $2350</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2280">
+            <button class="agregar">Muzza Salchipapas $2280</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2750">
+            <button class="agregar">Muzza 4 Quesos $2750</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2250">
+            <button class="agregar">Muzza Huevo Frito $2100</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>MITADES DE PIZZAS</h4>
+
+        <div class="producto" data-precio="980">
+            <button class="agregar">Mitad Muzza Clasica $980</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1080">
+            <button class="agregar">Mitad Muzza Doble $1080</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1150">
+            <button class="agregar">Mitad Muzza Jamon $1150</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1230">
+            <button class="agregar">Mitad Muzza Jamon Y Morron $1230</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1220">
+            <button class="agregar">Mitad Muzza Napolitana Comun $1120</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1250">
+            <button class="agregar">Mitad Muzza Napolitana Especial $1250</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1250">
+            <button class="agregar">Mitad Muzza Calabresa $1250</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1300">
+            <button class="agregar">Mitad Muzza Roquefort $1300</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1200">
+            <button class="agregar">Mitad Muzza con Huevo $1200</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1450">
+            <button class="agregar">Mitad Muzza con Papas Fritas y Cheddar $1450</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1500">
+            <button class="agregar">Mitad Muzza Salchipapas $1500</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1570">
+            <button class="agregar">Mitad Muzza 4 Quesos $1570</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1150">
+            <button class="agregar">Mitad Muzza Huevo Frito $1150</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>EMPANADAS</h4>
+
+        <div class="producto" data-precio="2700">
+            <button class="agregar">Docena 12 Empanadas $2700</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1600">
+            <button class="agregar">Media Docena 6 empanadas $1600</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="270">
+            <button class="agregar">Una 1 Empanada $270</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>PAPAS FRITAS</h4>
+
+        <div class="producto" data-precio="1600">
+            <button class="agregar">Box De Papas Fritas con Cheddar Verdeo o Bacon $1600</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="850">
+            <button class="agregar">Salchipapas Mediana $850</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1450">
+            <button class="agregar">Salchipapas Grande $1450</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="850">
+            <button class="agregar">Porcion de Papas Fritas Mediana $850</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1450">
+            <button class="agregar">Porcion de Papas Fritas Grande $1450</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+        
+        <div class="producto" data-precio="1600">
+            <button class="agregar">Milanesa al Plato con Guarnicion $1600</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1850">
+            <button class="agregar">Milanesa al Plato a Napolitana con Guarnicion $1850</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1950">
+            <button class="agregar">Milanesa al Plato a Caballo con Guarnicion $1950</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1840">
+            <button class="agregar">Milanesa al Plato a Fuggazzeta con Guarnicion $1840</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1840">
+            <button class="agregar">Milanesa al Plato a la Pizza con Guarnicion $1840</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1950">
+            <button class="agregar">Milanesa al Plato con Crema De Verdeo con Guarnicion $1950</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2100">
+            <button class="agregar">Milanesa al Plato a la Española con Guarnicion $2100</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>CARNE Y CERDO</h4>
+
+        <div class="producto" data-precio="1080">
+            <button class="agregar">Porcion de Chinchulines con guarnicion $1080</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1370">
+            <button class="agregar">Bife Costilla con guarnicion $1370</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1850">
+            <button class="agregar">Bife Casanova con guarnicion $1850</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1820">
+            <button class="agregar">Costillitas de Cerdo a la Riojana con guarnicion $1820</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1700">
+            <button class="agregar">Costillas a la Mostaza con guarnicion $1700</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1400">
+            <button class="agregar">Bondiola a la Pizza con guarnicion $1400</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1220">
+            <button class="agregar">Bondiola Grillada con guarnicion $1220</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1600">
+            <button class="agregar">Bondiola Napolitana con guarnicion $1600</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1700">
+            <button class="agregar">Bondiola Mostaza Y Romero con guarnicion $1700</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="3150">
+            <button class="agregar">Pollo Entero al Horno con guarnicion $3150</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1250">
+            <button class="agregar">1/4 Cuarto de Pollo con guarnicion $1250</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1750">
+            <button class="agregar">1/4 Cuarto de Pollo Al Verdeo con guarnicion $1750</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1450">
+            <button class="agregar">1/4 Cuarto de Pollo Provenzal con guarnicion $1450</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1800">
+            <button class="agregar">1/4 Cuarto de Pollo Champiniones con guarnicion $1800</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>PASTAS</h4>
+
+        <div class="producto" data-precio="830">
+            <button class="agregar">Ravioles $830</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="760">
+            <button class="agregar">Ñoquis $760</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="870">
+            <button class="agregar">Canelones $870</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="810">
+            <button class="agregar">Creps $810</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1000">
+            <button class="agregar">Sorrentinos $1000</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>SALSAS</h4>
+
+        <div class="producto" data-precio="370">
+            <button class="agregar">Fileto / Blanca / Rosa $370</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="450">
+            <button class="agregar">Bolognesa / Estofado / Putanesca / Cuatro 4 Quesos / Roquefort $450</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>PESCADOS</h4>
+
+        <div class="producto" data-precio="1430">
+            <button class="agregar">Filet Merluza Romana con guarnicion $1430/button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1850">
+            <button class="agregar">Filet Merluza Al Horno Napolitana / Roquefort / Crema Verdeo con guarnicion $1850</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>OMELETS</h4>
+
+        <div class="producto" data-precio="950">
+            <button class="agregar">Omelet Jamon y Queso con guarnicion $950</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="950">
+            <button class="agregar">Omelet Queso Y Cebolla $950</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="950">
+            <button class="agregar">Omelet Verdura Y Queso $950</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>TORTILLAS</h4>
+
+        <div class="producto" data-precio="1000">
+            <button class="agregar">Tortilla De Papa con Ens. Mixta $1000</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1050">
+            <button class="agregar">Tortilla De Papa Y Cebolla con Ens. Mixta $1050</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1250">
+            <button class="agregar">Tortilla De Papa Española con Ens. Mixta $1250</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1550">
+            <button class="agregar">Tortilla De Papa Cuatro 4 Quesos con Ens. Mixta $1550</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1000">
+            <button class="agregar">Tortilla De Verdura con Ens. Mixta $1000</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1050">
+            <button class="agregar">Tortilla De Verdura Y Cebolla con Ens. Mixta $1050</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>SANDWICHS</h4>
+
+        <div class="producto" data-precio="2100">
+            <button class="agregar">Sandwich Milanesa Simple P-2 $2100</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2350">
+            <button class="agregar">Sandwich Milanesa Completo P-2 $2350</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2150">
+            <button class="agregar">Sandwich Lomito Simple P-2 $2150</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2450">
+            <button class="agregar">Sandwich Lomito Completo P-2 $2450</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1700">
+            <button class="agregar">Sandwich Bondiola Simple P-1 $1700</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1950">
+            <button class="agregar">Sandwich Bondiola Completo P-1 $1950</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>HAMBURGUESAS</h4>
+
+        <div class="producto" data-precio="1050">
+            <button class="agregar">Burger Simple con Papas $1050</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1450">
+            <button class="agregar">Burger Completa con Papas $1450</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="2050">
+            <button class="agregar">Burger Gran Don Pedro con Papas $2050</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>OTROS PLATOS</h4>
+
+        <div class="producto" data-precio="1350">
+            <button class="agregar">Pastel De Papas $1350</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1450">
+            <button class="agregar">Arroz Con Pollo / Bolognesa / Estofado $1450</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1250">
+            <button class="agregar">Revuelto Gramajo $1250</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="1550">
+            <button class="agregar">Escalopes de Carne con guarnicion $1550</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="950">
+            <button class="agregar">Tarta Individual $950</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <h4>PROMOCIONES</h4>
+
+        <div class="producto" data-precio="5750">
+            <button class="agregar">PROMO: 2 Muzza + 1 Doc. Empanadas $5750</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="3750">
+            <button class="agregar">PROMO: 1 Muzza + 1 Muzza Jamon Y Morron $3750</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="4150">
+            <button class="agregar">PROMO: 1 Muzza + 1 Doc. Empanadas $4150</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="5100">
+            <button class="agregar">PROMO: 2 Dos Doc. Empanadas $5100</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="3000">
+            <button class="agregar">PROMO: 1 Sandw. Simple Mila + 1 Burger Simple $3000</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="3100">
+            <button class="agregar">PROMO: 1 Muzza + 6 Empanadas $3100</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="100">
+            <button class="agregar">Adicional Por Pelotudo $100</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        <div class="producto" data-precio="50">
+            <button class="agregar">Adicional Por Boliviano $50</button>
+            <button class="eliminar">Eliminar</button>
+        </div>
+
+        
+
+    </div>
+    <h2>Comanda Completa</h2>
+    <ul id="carrito">
+    </ul>
+    <p>Total: $<span id="total">0</span></p>
+    <button id="reiniciar">Reiniciar</button>
+
+    <div id="ticket">
+        <h3>Ticket de Compra</h3>
+        <ul></ul>
+    </div>
+
+    <script>
+        let total = 0;
+        const listaProductos = document.querySelector('#lista-productos');
+        const carrito = document.querySelector('#carrito');
+        const totalSpan = document.querySelector('#total');
+        const reiniciarBtn = document.querySelector('#reiniciar');
+        const ticketUl = document.querySelector('#ticket ul');
+        const busquedaInput = document.querySelector('#busqueda');
+
+        listaProductos.addEventListener('click', e => {
+            if (e.target.classList.contains('agregar')) {
+                const precio = parseInt(e.target.parentElement.dataset.precio);
+                total += precio;
+                totalSpan.textContent = total;
+                const li = document.createElement('li');
+                li.textContent = e.target.textContent.split(' - ')[0];
+                carrito.appendChild(li);
+                const ticketLi = document.createElement('li');
+                ticketLi.textContent = e.target.textContent.split(' - ')[0];
+                ticketUl.appendChild(ticketLi);
+            } else if (e.target.classList.contains('eliminar')) {
+                e.target.parentElement.remove();
+            }
+        });
+
+        carrito.addEventListener('click', e => {
+            if (e.target.tagName === 'LI') {
+                const producto = e.target.textContent;
+                const precio = parseInt([...listaProductos.children].find(el => el.textContent.includes(producto)).dataset.precio);
+                total -= precio;
+                totalSpan.textContent = total;
+                e.target.remove();
+                [...ticketUl.children].find(el => el.textContent === producto).remove();
+            }
+        });
+
+        reiniciarBtn.addEventListener('click', () => {
+            total = 0;
+            totalSpan.textContent = total;
+            carrito.innerHTML = '';
+            ticketUl.innerHTML = '';
+        });
+
+        busquedaInput.addEventListener('input', () => {
+            const busqueda = busquedaInput.value.toLowerCase();
+            [...listaProductos.children].forEach(producto => {
+                if (producto.textContent.toLowerCase().includes(busqueda)) {
+                    producto.style.display = 'inline-block';
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <h5>Alias MP: CERA.TAZA.CEPAS.MP</h5>
+    <H5>CVU:  </H5>
+    <h5>Palomo Puto</h5>
+</body>
+</html>
