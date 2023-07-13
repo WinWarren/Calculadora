@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    float: inline-start;
+}
+
+h2 {
+    text-align: center;
+    color: brown;
+}
+
+body {
+    background-image: url(fondo.jpg);
+    color: white;
+    background-attachment: fixed;
+    ;
+
+}
+
+#total {
+    color: green;
+}
+
+#lista-productos {
+    caption-side: top;
+}
+
+h4 {
+    text-align: center;
+}
+
